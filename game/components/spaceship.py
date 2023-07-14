@@ -34,17 +34,23 @@ class Spaceship:
     def move_left(self, game_speed):
         if self.rect.left > 0:
             self.rect.x -= game_speed
+        else:
+            if self.rect.left == 0:
+                self.rect.right = SCREEN_WIDTH
 
     def move_rigth(self, game_speed):
         if self.rect.right < SCREEN_WIDTH:
             self.rect.x += game_speed
+        else:
+            if self.rect.right == SCREEN_WIDTH:
+                self.rect.left = 0
             
     def move_up(self, game_speed):
-        if self.rect.top < SCREEN_HEIGHT:
+        if self.rect.top:
             self.rect.y -= game_speed
 
     def move_down(self, game_speed):
-        if self.rect.bottom > SCREEN_HEIGHT:
+        if self.rect.bottom < SCREEN_HEIGHT:
             self.rect.y += game_speed
 
 
