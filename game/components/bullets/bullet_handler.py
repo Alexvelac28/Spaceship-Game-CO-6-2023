@@ -12,9 +12,9 @@ class BulletHandler:
                 bullet.update(player)
             elif type(bullet) == BulletShip:
                 for enemy in enemies:
-                    bullet.update(player)
+                    bullet.update(enemy)
             if not bullet.is_alive or not bullet.is_visible:
-                self.remove_bullet(bullet)
+                self.remove_bullet(bullet) 
 
     def draw(self, screen):
         for bullet in self.bullets:
@@ -28,3 +28,6 @@ class BulletHandler:
 
     def remove_bullet(self, bullet):
         self.bullets.remove(bullet)
+
+    def reset(self):
+        self.bullets = []

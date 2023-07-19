@@ -40,6 +40,6 @@ FONT_STYLE = 'freesansbold.ttf'
 LEFT = 'left'
 RIGTH = 'right'
 BULLET_ENEMY_TYPE = 'enemy'
-BULLET_SHIP = 'player' 
+BULLET_SHIP = 'ship' 
 
 WHITE = (255, 255, 255)

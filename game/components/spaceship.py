@@ -20,16 +20,16 @@ class Spaceship:
         if user_input[pygame.K_LEFT]:
             self.move_left(game_speed)
 
-        if user_input[pygame.K_RIGHT]:
+        elif user_input[pygame.K_RIGHT]:
             self.move_rigth(game_speed)
 
-        if user_input[pygame.K_UP]:
+        elif user_input[pygame.K_UP]:
             self.move_up(game_speed)
         
-        if user_input[pygame.K_DOWN]:
+        elif user_input[pygame.K_DOWN]:
             self.move_down(game_speed)
 
-        if user_input[pygame.K_SPACE]:
+        elif user_input[pygame.K_SPACE]:
             self.shoot_ship(bullet_handler)
 
     def draw(self, screen):
@@ -55,8 +55,11 @@ class Spaceship:
 
     def shoot_ship(self, bullet_handler):
         bullet_handler.add_bullet(BULLET_SHIP, self.rect.center)
-    
 
-
-
-
+    def reset(self):
+        self.image = SPACESHIP
+        self.image = pygame.transform.scale(self.image, (self.WIDTH, self.HEIGHT))
+        self.rect = self.image.get_rect()
+        self.rect.x = self.X_POS
+        self.rect.y = self.Y_POS
+        self.is_alive = True

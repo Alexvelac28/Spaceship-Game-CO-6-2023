@@ -22,7 +22,7 @@ class Stellar(Enemy):
         self.index += 1
         super().update()
 
-    def move_stellar(self):
-        if self.index > self.INTERVAL:
-            self.rect.y -= self.MOVEMENT_X
-            self.rect.x -= self.MOVEMENT_Y
+    #def move_stellar(self):
+     #   if self.index > self.INTERVAL:
+    #        self.rect.y -= self.MOVEMENT_X
+    #        self.rect.x -= self.MOVEMENT_Y

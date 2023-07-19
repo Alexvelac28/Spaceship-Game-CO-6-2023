@@ -3,8 +3,8 @@ from game.components.bullets.bullet import Bullet
 from game.utils.constants import BULLET
 
 class BulletShip(Bullet):
-    WIDTH = 9
-    HEIGHT = 10
+    WIDTH = 20
+    HEIGHT = 50
     SPEED = 30
 
     def __init__(self, center):
