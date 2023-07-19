@@ -1,4 +1,11 @@
+import pygame
+
+from game.utils.constants import EXPLOSION
+
 class Bullet:
+    WIDTH = 40
+    HEIGHT = 60
+    
     def __init__(self, image, center):
         self.image = image
         self.rect = self.image.get_rect()
@@ -8,6 +15,9 @@ class Bullet:
 
     def update(self, object):
         if self.rect.colliderect(object.rect):
+            self.image = EXPLOSION
+            self.image = pygame.transform.scale(self.image, (self.WIDTH, self.HEIGHT))
+            self.rect = self.image.get_rect()
             object.is_alive = False
             self.is_alive = False
 

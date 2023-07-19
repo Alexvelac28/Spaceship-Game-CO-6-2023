@@ -1,4 +1,5 @@
 from game.components.enemies.ship import Ship
+from game.components.enemies.stellar import Stellar
 
 class EnemyHandler:
     def __init__(self):
@@ -17,9 +18,12 @@ class EnemyHandler:
     def draw(self, screen):
         for enemy in self.enemies:
             enemy.draw(screen)
+
     def add_enemy(self):
-        if len(self.enemies) < 5:
+        if len(self.enemies) < 2:
             self.enemies.append(Ship())
+        elif len(self.enemies) < 1:
+            self.enemies.append(Stellar())
     
     def remove_enemy(self, enemy):
         self.enemies.remove(enemy)
@@ -27,3 +31,4 @@ class EnemyHandler:
     def reset(self):
         self.enemies = []
         self.enemies_destroyed = 0
+        

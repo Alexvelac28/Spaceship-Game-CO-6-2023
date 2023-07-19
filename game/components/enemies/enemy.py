@@ -1,5 +1,5 @@
-import random
-from game.utils.constants import SCREEN_WIDTH, SCREEN_HEIGHT, LEFT, RIGTH, BULLET_ENEMY_TYPE
+import random, pygame
+from game.utils.constants import SCREEN_WIDTH, SCREEN_HEIGHT, LEFT, RIGTH, BULLET_ENEMY_TYPE, EXPLOSION
 
 class Enemy:
     Y_POS = 0
@@ -46,4 +46,4 @@ class Enemy:
 
     def shoot(self, bullet_handler):
         if self.shooting_time % self.SHOOTING_TIME == 0:
-             bullet_handler.add_bullet(BULLET_ENEMY_TYPE, self.rect.center)
+            bullet_handler.add_bullet(BULLET_ENEMY_TYPE, self.rect.center)

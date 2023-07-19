@@ -1,8 +1,11 @@
-from game.utils.constants import BULLET_ENEMY_TYPE, BULLET_SHIP
+import pygame
+
+from game.utils.constants import BULLET_ENEMY_TYPE, BULLET_SHIP, EXPLOSION, SCREEN_HEIGHT, SCREEN_WIDTH
 from game.components.bullets.bullet_enemy import BulletEnemy
 from game.components.bullets.bullet_ship import BulletShip
 
 class BulletHandler:
+    
     def __init__(self):
         self.bullets = []
 
