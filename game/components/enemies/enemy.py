@@ -16,12 +16,13 @@ class Enemy:
         self.rect.y = self.Y_POS
         self.mov_x = random.choice(self.MOV_X)
         self.index =0
-        self.shooting_time =0
+        self.shooting_time = 0
         self.is_visible = True
+        self.is_alive = True
 
     def update(self, bullet_handler):
         self.move()
-        self.shot(bullet_handler)
+        self.shoot(bullet_handler)
         if self.rect.y >= SCREEN_HEIGHT:
             self.is_visible = False
         self.index += 1
@@ -43,6 +44,6 @@ class Enemy:
                 self.mov_x = LEFT
                 self.index = 0
 
-    def shot(self, bullet_handler):
+    def shoot(self, bullet_handler):
         if self.shooting_time % self.SHOOTING_TIME == 0:
              bullet_handler.add_bullet(BULLET_ENEMY_TYPE, self.rect.center)
